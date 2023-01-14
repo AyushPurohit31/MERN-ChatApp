@@ -1,0 +1,27 @@
+{
+  "name": "whatschat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "author": "Ayush",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/lab": "^5.0.0-alpha.115",
+    "@mui/material": "^5.11.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^5.13.15",
+    "nodemon": "^2.0.20",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.6.2"
+  }
+}
