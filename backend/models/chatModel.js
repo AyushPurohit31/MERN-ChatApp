@@ -4,7 +4,7 @@
 //admin
 //latestMessage
 
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const chatModel = new Schema(
     {
