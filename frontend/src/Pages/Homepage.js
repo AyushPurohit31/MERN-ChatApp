@@ -1,6 +1,7 @@
 import { Container, Tab, Tabs, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Login from '../components/auth/Login';
 import Signup from '../components/auth/Signup';
 
@@ -10,6 +11,17 @@ const Homepage = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+
+  const navigate = useNavigate();
+    useEffect(()=>{
+        const user= JSON.parse(localStorage.getItem("userInfo"));
+
+        if(!user){
+            navigate("/chats")
+        }
+    }, [navigate]);
+
   return (
     <Container maxWidth = "sm" >
       <Box 
@@ -19,7 +31,9 @@ const Homepage = () => {
             width : "100%",
             padding : "3",
             margin : "100px 0 15px 0",
-          color : "black",
+            color : "white",
+            border : "1px solid white",
+            borderRadius : "10px"
         }}
       >
         <Typography fontSize="40px">WhatsChat</Typography>
