@@ -59,6 +59,7 @@ export default function UpgradeModal({ children, fetchMessages, fetchAgain, setF
 
       (user1._id === user._id)? setSelectedChat() : setSelectedChat(data);
       setFetchAgain(!fetchAgain);
+      fetchMessages();
       setLoading(false);
     } catch (error) {
       alert("error occured")

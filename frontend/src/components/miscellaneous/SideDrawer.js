@@ -7,10 +7,11 @@ import { ChatState } from '../../Context/chatProvider';
 import BasicModal from './Model';
 import { useNavigate } from "react-router-dom";
 import SideBar from './SideBar';
+import NotificationMenu from './notificationMenu';
 
 
 const SideDrawer = () => {
-    const { user } = ChatState();
+    const { user} = ChatState();
     const navigate = useNavigate();
 
       const [anchorEl, setAnchorEl] = useState(null);
@@ -20,6 +21,15 @@ const SideDrawer = () => {
       };
       const handleClose = () => {
         setAnchorEl(null);
+      };
+
+      const [anchorElA, setAnchorElA] = useState(null);
+      const openA = Boolean(anchorElA);
+      const handleClickA = (eventA) => {
+        setAnchorElA(eventA.currentTarget);
+      };
+      const handleCloseA = () => {
+        setAnchorElA(null);
       };
       
       const logoutHandler = () =>{
@@ -38,13 +48,12 @@ const SideDrawer = () => {
         }}>
             <SideBar/>
             <Typography variant='h4' fontFamily="cursive">WhatsChat</Typography>
-            <div>
-                <Button>
-                    <AiFillBell style={{ width : "20px", height : "20px"}}/>
-                </Button>
-                <Menu>
-
-                </Menu>
+            <div style={{
+              display :"flex",
+              justifyContent : "space-between",
+              alignItems : "center"
+            }}>
+                <NotificationMenu/>
 
                 <Button
                     onClick={handleClick}

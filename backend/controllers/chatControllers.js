@@ -130,7 +130,7 @@ const addToGroup = expressAsyncHandler(async (req, res)=>{
             .populate("groupAdmin", "-password");
 
         if(!added){
-            res.stats(404)
+            res.status(404)
             throw new Error("Chat not found");
         }else{
             res.json(added);
