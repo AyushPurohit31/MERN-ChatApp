@@ -14,7 +14,7 @@ import "./scroll.css"
 import Lottie from "react-lottie"
 import animationData from "../../animations/typing.json";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://mern-chatapp-production.up.railway.app/";
 var socket, selectedChatCompare;
 
 const SingleChat = ({fetchAgain, setFetchAgain}) => {
